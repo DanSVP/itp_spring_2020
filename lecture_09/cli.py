@@ -1,8 +1,20 @@
 import sys
 from file_handling import read_complete_file
+from stats import count_number_of_lines, count_number_of_words, get_word_counts, get_top_words
+
+#number of lines in the file
+#number of words
+#number of characters
 
 def main(filepath):
-    print(read_complete_file(filepath))
+    data = (read_complete_file(filepath))
+    num_lines = count_number_of_lines(data)
+    print(num_lines)
+    num_words = count_number_of_words(data)
+    print(num_words)
+    counts = get_word_counts(data)
+    print(counts)
+    print(get_top_words(counts))
 
 if __name__ == "__main__":
     args = sys.argv[1:]
